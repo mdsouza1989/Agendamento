@@ -1,0 +1,38 @@
+package poo.trab.agend.Entity;
+
+import javax.persistence.*;
+
+import org.apache.tomcat.jni.Time;
+
+
+@Entity
+@Table (name = "horarios")
+
+public class Horarios {
+	
+	@Id
+	@GeneratedValue (strategy = GenerationType.AUTO)
+	private long id;
+	
+	@Column(name = "horario", nullable = true)
+	@Temporal(TemporalType.TIME)
+	private Time horario;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public Time getHorario() {
+		return horario;
+	}
+
+	public void setHorario(Time horario) {
+		this.horario = horario;
+	}
+	
+	
+}
