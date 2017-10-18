@@ -1,0 +1,90 @@
+package poo.trab.agend.Entity;
+
+import javax.persistence.*;
+
+
+@Entity
+@Table (name = "solicitacao")
+public class Solicitacao {
+	
+	@Id
+	@GeneratedValue (strategy = GenerationType.AUTO)
+	private long id;
+	
+	@Column
+	private String atendimentoscol;
+	
+	@Column
+	private String hr_atendimento;
+	
+	@Column 
+	private String dt_atendimento;
+	
+	@Column
+	private String obs;
+	
+	@Column
+	private String hr_inicializado;
+	
+	@ManyToOne
+	private Setores setores;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getAtendimentoscol() {
+		return atendimentoscol;
+	}
+
+	public void setAtendimentoscol(String atendimentoscol) {
+		this.atendimentoscol = atendimentoscol;
+	}
+
+	public String getHr_atendimento() {
+		return hr_atendimento;
+	}
+
+	public void setHr_atendimento(String hr_atendimento) {
+		this.hr_atendimento = hr_atendimento;
+	}
+
+	public String getDt_atendimento() {
+		return dt_atendimento;
+	}
+
+	public void setDt_atendimento(String dt_atendimento) {
+		this.dt_atendimento = dt_atendimento;
+	}
+
+	public String getObs() {
+		return obs;
+	}
+
+	public void setObs(String obs) {
+		this.obs = obs;
+	}
+
+	public String getHr_inicializado() {
+		return hr_inicializado;
+	}
+
+	public void setHr_inicializado(String hr_inicializado) {
+		this.hr_inicializado = hr_inicializado;
+	}
+
+	public Setores getSetores() {
+		return setores;
+	}
+
+	public void setSetores(Setores setores) {
+		this.setores = setores;
+	}
+	
+	
+	
+}
