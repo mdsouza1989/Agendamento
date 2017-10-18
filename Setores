@@ -1,0 +1,65 @@
+package poo.trab.agend.Entity;
+
+
+import javax.persistence.*;
+import org.apache.tomcat.jni.Time;
+
+
+
+@Entity
+@Table (name = "setores")
+public class Setores {
+	
+	@Id
+	@GeneratedValue (strategy = GenerationType.AUTO)
+	private long id;
+	
+	@Column
+	private String setor;
+	
+	@Column(name = "min_atendimento", nullable = true)
+	@Temporal(TemporalType.TIME)
+	private Time min_atendimento;
+	
+	
+	@OneToMany(cascade=CascadeType.ALL)
+	private Horarios horarios;
+	
+	public Setores() {
+		this.horarios = new Horarios();
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getSetor() {
+		return setor;
+	}
+
+	public void setSetor(String setor) {
+		this.setor = setor;
+	}
+
+	public Time getMin_atendimento() {
+		return min_atendimento;
+	}
+
+	public void setMin_atendimento(Time min_atendimento) {
+		this.min_atendimento = min_atendimento;
+	}
+
+	public Horarios getHorarios() {
+		return horarios;
+	}
+
+	public void setHorarios_setor(Horarios horarios) {
+		this.horarios = horarios;
+	}
+
+
+}
